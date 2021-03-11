@@ -25,7 +25,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_updatekeys_clicked()
 {
-    system("mv ~/test2/data.txt ~/test1/");
+    system("sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --refresh-keys && sudo pacman -Syy");
     QMessageBox msgBox;
     msgBox.setText("Процесс обновления ключей...\n   успешно завершился!");
     msgBox.setStandardButtons(QMessageBox::Ok);
