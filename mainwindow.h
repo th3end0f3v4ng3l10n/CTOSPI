@@ -20,6 +20,12 @@ private slots:
 
     void on_pkgsinstall_clicked();
 
+    void on_updatesystem_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_nvidiaanddrivers_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QMessageBox>
 #include "secondwindow.h"
+#include "daki.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -44,4 +45,22 @@ void MainWindow::on_pkgsinstall_clicked()
     window.exec();
 
 
+}
+
+void MainWindow::on_updatesystem_clicked()
+{
+    system("sudo pacman -Syuu");
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    system("sudo reflector -c ru,by,ua,pl -p https,http -l 20 --sort rate --save /etc/pacman.d/mirrorlist");
+}
+
+void MainWindow::on_nvidiaanddrivers_clicked()
+{
+    DaKI window;
+    window.setModal(true);
+    this->close();
+    window.exec();
 }

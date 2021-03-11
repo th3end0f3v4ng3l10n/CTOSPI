@@ -39,6 +39,9 @@ set(PROJECT_SOURCES
         secondwindow.ui
         img.qrc
         yaml_reader.cpp
+        daki.cpp
+        daki.h
+        daki.ui
         ${TS_FILES}
 )
 

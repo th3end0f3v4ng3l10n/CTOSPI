@@ -41,35 +41,6 @@
     <normaloff>icons/icon.png</normaloff>icons/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>370</y>
-      <width>179</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetDefaultConstraint</enum>
-     </property>
-     <item>
-      <widget class="QPushButton" name="pkgsinstall">
-       <property name="text">
-        <string>Install PKGs</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="updatekeys">
-       <property name="text">
-        <string>Update Keys</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QGroupBox" name="Menu_Group">
     <property name="geometry">
      <rect>
@@ -120,7 +91,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Welcome.jpg</pixmap>
+     <pixmap resource="img.qrc">:/images/Welcome.jpg</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -150,9 +121,58 @@
      <string>Authored by th3end0f3v4ng3l10n.</string>
     </property>
    </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>340</y>
+      <width>511</width>
+      <height>104</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="nvidiaanddrivers">
+       <property name="text">
+        <string>Drivers - Kernel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Update Mirrors</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="pkgsinstall">
+       <property name="text">
+        <string>Install PKGs</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="updatekeys">
+       <property name="text">
+        <string>Update Keys</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QPushButton" name="updatesystem">
+       <property name="text">
+        <string>Update System</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>updatekeys</sender>
