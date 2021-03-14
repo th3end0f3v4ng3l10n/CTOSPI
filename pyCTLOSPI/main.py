@@ -176,13 +176,13 @@ def start_point():
                 return False
             
             def example_target():
-                string =['sudo', 'pacman', '-Sy']
+                string =['pacman', '-Syy']
                 print('---------------------------------',INSTALL_DATA)
                 for i in INSTALL_DATA:
                     string.append(i)
                     
-                string.append("-y")
-                string.append("-y")
+                string.append("--noconfirm")
+                string.append("--needed")
                 print(string) 
                 proc = subprocess.Popen(string,stdout=subprocess.PIPE)
                 
@@ -220,11 +220,11 @@ def start_point():
                 return False
             
             def example_target():
-                proc = subprocess.Popen(['sudo','pacman-key','--init','&&',
-                                         'sudo','pacman-key','--populate','&&',
-                                         'sudo','pacman-key --refresh-keys','&&',
-                                         'sudo','pacman', '-Syy',
-                                         'sudo','reflector','-c','ru,by,ua,pl','-p','https',',','http','--sort','rate','-a','12',
+                proc = subprocess.Popen(['pacman-key','--init','&&',
+                                         'pacman-key','--populate','&&',
+                                         'pacman-key --refresh-keys','&&',
+                                         'pacman', '-Syy',
+                                         'reflector','-c','ru,by,ua,pl','-p','https',',','http','--sort','rate','-a','12',
                                          '-l','10','--save','/etc/pacman.d/mirrorlist'],stdout=subprocess.PIPE)
                 while True:
                     line = proc.stdout.readline()
@@ -256,7 +256,7 @@ def start_point():
                 return False
             
             def example_target():
-                proc = subprocess.Popen(['sudo', 'pacman', '-Syyu', '-y'],stdout=subprocess.PIPE)
+                proc = subprocess.Popen(['pacman', '-Syyu', '-y'],stdout=subprocess.PIPE)
                 while True:
                     line = proc.stdout.readline()
                     print(line.decode('utf-8'))
